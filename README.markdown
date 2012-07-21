@@ -34,27 +34,27 @@ Or, in fluent syntax
 
 There are a few assertions that can be used against any type,
 
-- __toBe(...)/be(...)__ - assert that the state is the value passed in,
+__toBe(...)/be(...)__ - assert that the state is the value passed in,
 
 
     expect("james").toBe("james")
     "james".should.be("james")
 
 
-- __toNotBe(...)/notBe(...)__ - assert that the state is NOT the value passed in,
+__toNotBe(...)/notBe(...)__ - assert that the state is NOT the value passed in,
 
 
     expect("james").toNotBe("henry")
     "james".should.notBe("henry")
 
-- __toBeNull()/beNull()__ - assert that the state is null,
+__toBeNull()/beNull()__ - assert that the state is null,
 
 
     expect(null).toBeNull()
     null.should.beNull()
 
 
-- __toNotBeNull()/notBeNull()__ - assert that the state is NOT null,
+__toNotBeNull()/notBeNull()__ - assert that the state is NOT null,
 
 
     expect("james").toNotBeNull()
