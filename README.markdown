@@ -27,41 +27,69 @@ Expect.kt allows you to chain assertions to keep things really neat and tidy.
 Or, in fluent syntax
 
     "james".should.startWith("j").and.endWith("s")
-    
-## The Assertions
 
-### Standard Assertions
+## Standard Assertions
 
 There are a few assertions that can be used against any type,
 
-#### toBe(...)/be(...)
+### toBe(...)/be(...)
 
 Assert that the state is the value passed in,
 
     expect("james").toBe("james")
     "james".should.be("james")
 
-#### toNotBe(...)/notBe(...)
+### toNotBe(...)/notBe(...)
 
 Assert that the state is NOT the value passed in,
 
     expect("james").toNotBe("henry")
     "james".should.notBe("henry")
 
-#### toBeNull()/beNull()
+### toBeNull()/beNull()
 
 Assert that the state is null,
 
     expect(null).toBeNull()
     null.should.beNull()
 
-#### toNotBeNull()/notBeNull()
+### toNotBeNull()/notBeNull()
 
 Assert that the state is NOT null
 
     expect("james").toNotBeNull()
     "james".should.notBeNull()
+    
+## Logic Assertions
 
+### toBeTrue()/beTrue()
+
+Assert that the value is `true`
+
+    expect(true).toBeTrue()
+    true.should.beTrue()
+    
+### toNotBeTrue()/notBeTrue()
+
+Assert that the state is NOT `true`
+
+    expect(false).toNotBeTrue()
+    false.should.notBeTrue()
+    
+### toBeFalse()/beFalse()
+
+Assert that the value is `false`
+
+    expect(false).toBeFalse()
+    false.should.beFalse()
+    
+### toNotBeFalse()/notBeFalse()
+
+Assert that the state is NOT `false`
+
+    expect(true).toNotBeFalse()
+    true.should.notBeFalse()
+    
 <!--
 #   // STANDARD TESTS
 
