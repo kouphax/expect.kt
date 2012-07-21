@@ -10,35 +10,40 @@ Expect.kt allows you to use two different approaches to defining an assertion.
 
 Expect syntax offers typical expect(something).toBeInACertainState style of grammar.  The following test highlight this appraoch.
 
-    test fun testName () {
-        expect("james").toBe("james")
-    }
+    expect("james").toBe("james")
 
 ### Fluent Syntax
 
 It is also possible to use a more fluent syntax to make the same assertion
 
-    test fun testName () {
-        "james".should.be("james")
-    }
+    "james".should.be("james")
 
 ## Chaining
 
 Expect.kt allows you to chain assertions to keep things really neat and tidy.
 
-    test fun testName () {
-        expect("james").toStartWith("j").and.toEndWith("s")
-    }
-
+    expect("james").toStartWith("j").and.toEndWith("s")
+    
 Or, in fluent syntax
 
-    test fun testName () {
-        "james".should.startWith("j").and.endWith("s")
-    }
-
+    "james".should.startWith("j").and.endWith("s")
+    
 ## The Assertions
 
-ToDo.
+### Standard Assertions
+
+There are a few assertions that can be used against any type,
+
+- `toBe(...)/be(...)` - assert that the state is the value passed in,
+
+    expect("james").toBe("james")
+    "james".should.be("james")
+    
+- `toNotBe(...)/notBe(...)` - assert that the state is NOT the value passed in,
+
+    expect("james").toNotBe("henry")
+    "james".should.notBe("henry")
+
 
 <!--
 #   // STANDARD TESTS
