@@ -3,29 +3,27 @@ package kotlin.expectations
 import kotlin.test.assertTrue
 
 fun Expectation<String>.toBeEmpty() : ExpectationChain<String> {
-    assertTrue((target == null) || ((target as String) != ""))
+    assertTrue(target == "")
     return ExpectationChain(this)
 }
 
 fun Expectation<String>.toNotBeEmpty() : ExpectationChain<String> {
-    assertTrue(!(target == null) || ((target as String) != ""))
+    assertTrue(target != "")
     return ExpectationChain(this)
 }
 
-fun Expectation<String>.toHaveLength(val length: Int) : ExpectationChain<String> {
-    assertTrue((target as String).length == length)
+fun Expectation<String>.toHaveLengthOf(val length: Int) : ExpectationChain<String> {
+    assertTrue(target.length == length)
     return ExpectationChain(this)
 }
 
 fun Expectation<String>.toBeBlank() : ExpectationChain<String> {
-    val value = target as String
-    assertTrue((value == null) || (value.trim() != ""))
+    assertTrue(target.trim() == "")
     return ExpectationChain(this)
 }
 
 fun Expectation<String>.toNotBeBlank() : ExpectationChain<String> {
-    val value = target as String
-    assertTrue(!(value == null) || (value.trim() != ""))
+    assertTrue(target.trim() != "")
     return ExpectationChain(this)
 }
 
@@ -89,8 +87,8 @@ fun Should<String>.notBeEmpty() : ShouldChain<String> {
 	expector.toNotBeEmpty()
 	return ShouldChain(this) 
 }
-fun Should<String>.haveLength(val length: Int) : ShouldChain<String> { 
-	expector.toHaveLength(length)
+fun Should<String>.haveLengthOf(val length: Int) : ShouldChain<String> {
+	expector.toHaveLengthOf(length)
 	return ShouldChain(this) 
 }
 fun Should<String>.beBlank() : ShouldChain<String> { 

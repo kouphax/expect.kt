@@ -1,3 +1,32 @@
+#   // STANDARD TESTS
+
+    // toBe
+    // toNotBe
+    // toBeNull
+    // toNotBeNull
+
+#   // BOOLEAN TYPES
+
+    // toBeTrue
+    // toBeFalse
+
+#   // STRING TYPES
+
+    // toBeEmpty
+    // toNotBeEmpty
+    // toHaveLength
+    // toBeBlank
+    // toNotBeBlank
+    // toBeEquivalentTo
+    // toEndWith
+    // toEndWithEquivalent
+    // toContain
+    // toContainEquivalent
+    // toNotContain
+    // toNotContainEquivalent
+    // toStartWith
+    // toStartWithEquivalent
+    // toMatch
 
 #   // NUMERIC TYPES
 
