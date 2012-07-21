@@ -90,98 +90,84 @@ Assert that the state is NOT `false`
     expect(true).toNotBeFalse()
     true.should.notBeFalse()
     
-<!--
-#   // STANDARD TESTS
+## String Assertions
 
-    // toBe
-    // toNotBe
-    // toBeNull
-    // toNotBeNull
+### toBeEmpty
+### toNotBeEmpty
+### toHaveLength
+### toBeBlank
+### toNotBeBlank
+### toBeEquivalentTo
+### toEndWith
+### toEndWithEquivalent
+### toContain
+### toContainEquivalent
+### toNotContain
+### toNotContainEquivalent
+### toStartWith
+### toStartWithEquivalent
+### toMatch
 
-#   // BOOLEAN TYPES
+## Numeric Assertions
 
-    // toBeTrue
-    // toBeFalse
+### toBeGreaterOrEqualTo
+### toBeGreaterThan
+### toBeLessOrEqualTo
+### toBeLessThan
+### toBePositive
+### toBeInRange
+### toBeApproximately
 
-#   // STRING TYPES
+## Date and Time Assertions
 
-    // toBeEmpty
-    // toNotBeEmpty
-    // toHaveLength
-    // toBeBlank
-    // toNotBeBlank
-    // toBeEquivalentTo
-    // toEndWith
-    // toEndWithEquivalent
-    // toContain
-    // toContainEquivalent
-    // toNotContain
-    // toNotContainEquivalent
-    // toStartWith
-    // toStartWithEquivalent
-    // toMatch
+### toBeAfter
+### toBeBefore
+### toBeOnOrAfter
+### toHaveDay
+### toHaveMonth
+### toHaveYear
+### toHaveHour
+### toHaveMinute
+### toHaveSecond
+### toBeLessThan().before()
+### toBeWithin(timespan).after()
+### toBeMoreThan(timespan)...
+### toBeAtLeast(timespan)...
+### toBeExactly
 
-#   // NUMERIC TYPES
+## Collection Assertions
 
-    // toBeGreaterOrEqualTo
-    // toBeGreaterThan
-    // toBeLessOrEqualTo
-    // toBeLessThan
-    // toBePositive
-    // toBeInRange
-    // toBeApproximately
+### toNotBeEmpty
+### toHaveCount
+### toContainInOrder
+### toHaveSameCount
+### toBeSubsetOf
+### toNotBeSubsetOf
+### toHaveElementAt
+### toNotHaveElementAt
+### toContain
+### toContain - lambda
+### toNotContain - lambda
+### toOnlyContain - lambda
+### toNotContainNulls
+### toBeEmpty
 
-#    // DATES, TIMES AND TIMESTAMPS
+## Dictionary Assertions
 
-    // toBeAfter
-    // toBeBefore
-    // toBeOnOrAfter
-    // toHaveDay
-    // toHaveMonth
-    // toHaveYear
-    // toHaveHour
-    // toHaveMinute
-    // toHaveSecond
-    // toBeLessThan().before()
-    // toBeWithin(timespan).after()
-    // toBeMoreThan(timespan)...
-    // toBeAtLeast(timespan)...
-    // toBeExactly
+### toEqual
+### toNotEqual
+### toBeEmpty
+### toNotBeEmpty
+### toContainKey
+### toNotContainKey
+### toContainValue
+### toNotContainValue
+### toHaveCount
+### toContain - keyvaluepair
 
-#    // COLLECTIONS
+## Exception Assertions
 
-    // toNotBeEmpty
-    // toHaveCount
-    // toContainInOrder
-    // toHaveSameCount
-    // toBeSubsetOf
-    // toNotBeSubsetOf
-    // toHaveElementAt
-    // toNotHaveElementAt
-    // toContain
-    // toContain - lambda
-    // toNotContain - lambda
-    // toOnlyContain - lambda
-    // toNotContainNulls
-    // toBeEmpty
-
-#    // DICTIONARIES
-
-    // toEqual
-    // toNotEqual
-    // toBeEmpty
-    // toNotBeEmpty
-    // toContainKey
-    // toNotContainKey
-    // toContainValue
-    // toNotContainValue
-    // toHaveCount
-    // toContain - keyvaluepair
-
-#    // EXCEPTIONS
-
-    // toThrow
-    // toThrow(type)
-    // toNotThrow
-    // toNotThrow(type)
--->
+### toThrow
+### toThrow&lt;TException>
+### toNotThrow
+### toNotThrow&lt;TException>
