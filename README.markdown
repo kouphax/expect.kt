@@ -1,24 +1,24 @@
-## Introduction
+# Introduction
 
 Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set of assertions than you get from the `kotlin.test`.  Each type has a set of extension functions that allow you to check certain specifics that relate to that type.
 
-## Syntax
+# Syntax
 
 Expect.kt allows you to use two different approaches to defining an assertion.
 
-### Expect Syntax
+## Expect Syntax
 
 Expect syntax offers typical expect(something).toBeInACertainState style of grammar.  The following test highlight this appraoch.
 
     expect("james").toBe("james")
 
-### Fluent Syntax
+## Fluent Syntax
 
 It is also possible to use a more fluent syntax to make the same assertion
 
     "james".should.be("james")
 
-## Chaining
+# Chaining
 
 Expect.kt allows you to chain assertions to keep things really neat and tidy.
 
@@ -28,146 +28,148 @@ Or, in fluent syntax
 
     "james".should.startWith("j").and.endWith("s")
 
-## Standard Assertions
+# Standard Assertions
 
 There are a few assertions that can be used against any type,
 
-### toBe(...)/be(...)
+## toBe(...)/be(...)
 
 Assert that the state is the value passed in,
 
     expect("james").toBe("james")
     "james".should.be("james")
 
-### toNotBe(...)/notBe(...)
+## toNotBe(...)/notBe(...)
 
 Assert that the state is NOT the value passed in,
 
     expect("james").toNotBe("henry")
     "james".should.notBe("henry")
 
-### toBeNull()/beNull()
+## toBeNull()/beNull()
 
 Assert that the state is null,
 
     expect(null).toBeNull()
     null.should.beNull()
 
-### toNotBeNull()/notBeNull()
+## toNotBeNull()/notBeNull()
 
 Assert that the state is NOT null
 
     expect("james").toNotBeNull()
     "james".should.notBeNull()
     
-## Logic Assertions
+# Logic Assertions
 
-### toBeTrue()/beTrue()
+## toBeTrue()/beTrue()
 
 Assert that the value is `true`
 
     expect(true).toBeTrue()
     true.should.beTrue()
     
-### toNotBeTrue()/notBeTrue()
+## toNotBeTrue()/notBeTrue()
 
 Assert that the state is NOT `true`
 
     expect(false).toNotBeTrue()
     false.should.notBeTrue()
     
-### toBeFalse()/beFalse()
+## toBeFalse()/beFalse()
 
 Assert that the value is `false`
 
     expect(false).toBeFalse()
     false.should.beFalse()
     
-### toNotBeFalse()/notBeFalse()
+## toNotBeFalse()/notBeFalse()
 
 Assert that the state is NOT `false`
 
     expect(true).toNotBeFalse()
     true.should.notBeFalse()
     
-## String Assertions
+# String Assertions
 
-### toBeEmpty
-### toNotBeEmpty
-### toHaveLength
-### toBeBlank
-### toNotBeBlank
-### toBeEquivalentTo
-### toEndWith
-### toEndWithEquivalent
-### toContain
-### toContainEquivalent
-### toNotContain
-### toNotContainEquivalent
-### toStartWith
-### toStartWithEquivalent
-### toMatch
+## toBeEmpty
+## toNotBeEmpty
+## toHaveLength
+## toBeBlank
+## toNotBeBlank
+## toBeEquivalentTo
+## toEndWith
+## toEndWithEquivalent
+## toContain
+## toContainEquivalent
+## toNotContain
+## toNotContainEquivalent
+## toStartWith
+## toStartWithEquivalent
+## toMatch
 
-## Numeric Assertions
+> TODO: This stuff is still in development and very subject to change.
 
-### toBeGreaterOrEqualTo
-### toBeGreaterThan
-### toBeLessOrEqualTo
-### toBeLessThan
-### toBePositive
-### toBeInRange
-### toBeApproximately
+# Numeric Assertions
 
-## Date and Time Assertions
+## toBeGreaterOrEqualTo
+## toBeGreaterThan
+## toBeLessOrEqualTo
+## toBeLessThan
+## toBePositive
+## toBeInRange
+## toBeApproximately
 
-### toBeAfter
-### toBeBefore
-### toBeOnOrAfter
-### toHaveDay
-### toHaveMonth
-### toHaveYear
-### toHaveHour
-### toHaveMinute
-### toHaveSecond
-### toBeLessThan().before()
-### toBeWithin(timespan).after()
-### toBeMoreThan(timespan)...
-### toBeAtLeast(timespan)...
-### toBeExactly
+# Date and Time Assertions
 
-## Collection Assertions
+## toBeAfter
+## toBeBefore
+## toBeOnOrAfter
+## toHaveDay
+## toHaveMonth
+## toHaveYear
+## toHaveHour
+## toHaveMinute
+## toHaveSecond
+## toBeLessThan().before()
+## toBeWithin(timespan).after()
+## toBeMoreThan(timespan)...
+## toBeAtLeast(timespan)...
+## toBeExactly
 
-### toNotBeEmpty
-### toHaveCount
-### toContainInOrder
-### toHaveSameCount
-### toBeSubsetOf
-### toNotBeSubsetOf
-### toHaveElementAt
-### toNotHaveElementAt
-### toContain
-### toContain - lambda
-### toNotContain - lambda
-### toOnlyContain - lambda
-### toNotContainNulls
-### toBeEmpty
+# Collection Assertions
 
-## Dictionary Assertions
+## toNotBeEmpty
+## toHaveCount
+## toContainInOrder
+## toHaveSameCount
+## toBeSubsetOf
+## toNotBeSubsetOf
+## toHaveElementAt
+## toNotHaveElementAt
+## toContain
+## toContain - lambda
+## toNotContain - lambda
+## toOnlyContain - lambda
+## toNotContainNulls
+## toBeEmpty
 
-### toEqual
-### toNotEqual
-### toBeEmpty
-### toNotBeEmpty
-### toContainKey
-### toNotContainKey
-### toContainValue
-### toNotContainValue
-### toHaveCount
-### toContain - keyvaluepair
+# Dictionary Assertions
 
-## Exception Assertions
+## toEqual
+## toNotEqual
+## toBeEmpty
+## toNotBeEmpty
+## toContainKey
+## toNotContainKey
+## toContainValue
+## toNotContainValue
+## toHaveCount
+## toContain - keyvaluepair
 
-### toThrow
-### toThrow&lt;TException>
-### toNotThrow
-### toNotThrow&lt;TException>
+# Exception Assertions
+
+## toThrow
+## toThrow&lt;TException>
+## toNotThrow
+## toNotThrow&lt;TException>
