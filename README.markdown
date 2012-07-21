@@ -108,9 +108,7 @@ Assert that the state is NOT `false`
 ## toStartWithEquivalent
 ## toMatch
 
-> TODO: This stuff is still in development and very subject to change.
-
-# Numeric Assertions
+# Int Assertions
 
 ## toBeGreaterOrEqualTo
 ## toBeGreaterThan
@@ -119,6 +117,8 @@ Assert that the state is NOT `false`
 ## toBePositive
 ## toBeInRange
 ## toBeApproximately
+
+> TODO: This stuff is still in development and very subject to change.
 
 # Date and Time Assertions
 

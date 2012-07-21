@@ -1,0 +1,74 @@
+package kotlin.expectations
+
+import kotlin.test.assertTrue
+
+fun Expectation<Short>.toBeGreaterOrEqualTo(val value: Short) : ExpectationChain<Short> {
+    assertTrue(target >= value)
+    return ExpectationChain(this)
+}
+
+fun Expectation<Short>.toBeGreaterThan(val value: Short) : ExpectationChain<Short> {
+    assertTrue(target > value)
+    return ExpectationChain(this)
+}
+
+fun Expectation<Short>.toBeLessOrEqualTo(val value: Short) : ExpectationChain<Short> {
+    assertTrue(target <= value)
+    return ExpectationChain(this)
+}
+
+fun Expectation<Short>.toBeLessThan(val value: Short) : ExpectationChain<Short> {
+    assertTrue(target < value)
+    return ExpectationChain(this)
+}
+
+fun Expectation<Short>.toBePositive() : ExpectationChain<Short> {
+    assertTrue(target > 0)
+    return ExpectationChain(this)
+}
+
+fun Expectation<Short>.toBeInRange(val lower: Short, val upper: Short) : ExpectationChain<Short> {
+    assertTrue(target >= lower && target <= upper)
+    return ExpectationChain(this)
+}
+
+fun Expectation<Short>.toBeApproximately(val value: Short, val tolerance: Short) : ExpectationChain<Short> {
+    return expect(target).toBeInRange((value - tolerance) as Short, (value + tolerance) as Short)
+}
+
+public val Short.should : Should<Short> get() = Should(this)
+
+fun Should<Short>.beGreaterOrEqualTo(val value: Short) : ShouldChain<Short> {
+    expector.toBeGreaterOrEqualTo(value)
+    return ShouldChain(this)
+}
+
+fun Should<Short>.beGreaterThan(val value: Short) : ShouldChain<Short> {
+    expector.toBeGreaterThan(value)
+    return ShouldChain(this)
+}
+
+fun Should<Short>.beLessOrEqualTo(val value: Short) : ShouldChain<Short> {
+    expector.toBeLessOrEqualTo(value)
+    return ShouldChain(this)
+}
+
+fun Should<Short>.beLessThan(val value: Short) : ShouldChain<Short> {
+    expector.toBeLessThan(value)
+    return ShouldChain(this)
+}
+
+fun Should<Short>.bePositive() : ShouldChain<Short> {
+    expector.toBePositive()
+    return ShouldChain(this)
+}
+
+fun Should<Short>.beInRange(val lower: Short, val upper: Short) : ShouldChain<Short> {
+    expector.toBeInRange(lower, upper)
+    return ShouldChain(this)
+}
+
+fun Should<Short>.beApproximately(val value: Short, val tolerance: Short) : ShouldChain<Short> {
+    expector.toBeApproximately(value, tolerance)
+    return ShouldChain(this)
+}
