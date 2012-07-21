@@ -8,17 +8,6 @@ import kotlin.expectations.*
 
 class StringExpectationTests {
 
-    // toEndWith
-    // toContain
-    // toNotContain
-    // toStartWith
-    // toMatch
-    // toEndWithEquivalent
-    // toBeEquivalentTo
-    // toContainEquivalent
-    // toStartWithEquivalent
-    // toNotContainEquivalent
-
     test fun toBeEmpty () {
 
         expect("").toBeEmpty()
@@ -107,5 +96,103 @@ class StringExpectationTests {
         failsWith<AssertionError>({
             "    ".should.notBeBlank()
         })
+    }
+
+    test fun toEndWith() {
+        expect("james").toEndWith("s")
+
+        failsWith<AssertionError>({
+            expect("james").toEndWith("j")
+        })
+
+        "james".should.endWith("s")
+
+        failsWith<AssertionError>({
+            "james".should.endWith("j")
+        })
+    }
+
+    test fun toContain() {
+        expect("james").toContain("ame")
+
+        failsWith<AssertionError>({
+           expect("james").toContain("nope")
+        })
+
+        "james".should.contain("ame")
+
+        failsWith<AssertionError>({
+            "james".should.contain("nope")
+        })
+    }
+
+    test fun toNotContain() {
+        expect("james").toNotContain("nope")
+
+        failsWith<AssertionError>({
+           expect("james").toNotContain("ame")
+        })
+
+        "james".should.notContain("nope")
+
+        failsWith<AssertionError>({
+            "james".should.notContain("ame")
+        })
+    }
+
+    test fun toStartWith() {
+        expect("james").toStartWith("j")
+
+        failsWith<AssertionError>({
+            expect("james").toStartWith("s")
+        })
+
+        "james".should.startWith("j")
+
+        failsWith<AssertionError>({
+            "james".should.startWith("s")
+        })
+    }
+
+    test fun toMatch(){
+        expect("james").toMatch("^james$")
+
+        failsWith<AssertionError>({
+            expect("james").toMatch("^fail$")
+        })
+
+        "james".should.match("^james$")
+
+        failsWith<AssertionError>({
+            "james".should.match("^fail$")
+        })
+    }
+
+    test fun toEndWithEquivalent() {
+        expect("james").toEndWithEquivalent("S")
+
+        "james".should.endWithEquivalent("S")
+    }
+
+    test fun toContainEquivalent() {
+        expect("james").toContainEquivalent("aMe")
+
+        "james".should.containEquivalent("aMe")
+    }
+
+    test fun toNotContainEquivalent() {
+        failsWith<AssertionError>({
+           expect("james").toNotContainEquivalent("aMe")
+        })
+
+        failsWith<AssertionError>({
+            "james".should.notContainEquivalent("aMe")
+        })
+    }
+
+    test fun toStartWithEquivalent() {
+        expect("james").toStartWithEquivalent("J")
+
+        "james".should.startWithEquivalent("J")
     }
 }
