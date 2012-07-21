@@ -1,8 +1,6 @@
 ## Introduction
 
-Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set
-of assertions than you get from the `kotlin.test`.  Each type has a set of extension functions that allow you to check certain
-specifics that relate to that type.
+Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set of assertions than you get from the `kotlin.test`.  Each type has a set of extension functions that allow you to check certain specifics that relate to that type.
 
 ## Syntax
 
@@ -10,8 +8,7 @@ Expect.kt allows you to use two different approaches to defining an assertion.
 
 ### Expect Syntax
 
-Expect syntax offers typical expect(something).toBeInACertainState style of grammar.  The following test highlight this
-appraoch.
+Expect syntax offers typical expect(something).toBeInACertainState style of grammar.  The following test highlight this appraoch.
 
     test fun testName () {
         expect("james").toBe("james")
