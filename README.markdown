@@ -1,5 +1,3 @@
-#expect.kt
-
 ## Introduction
 
 Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set
