@@ -181,7 +181,7 @@ Assert that a string starts with another string regardless of case.
 
 Assert that a string matches the given regex.
 
-# Int Assertions
+# Numeric Assertions (currently Int, Long, Double)
 
 ## toBeGreaterOrEqualTo
 
@@ -198,10 +198,6 @@ Assert that a number is less than or equal to another
 ## toBeLessThan
 
 Assert that a number is less than to another
-
-## toBePositive
-
-Assert that a number is positive
 
 ## toBeInRange
 
