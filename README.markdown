@@ -2,6 +2,8 @@
 
 Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set of assertions than you get from the `kotlin.test`.  Each type has a set of extension functions that allow you to check certain specifics that relate to that type.
 
+Rather than fulfilling a specific need this project was started as a means to understand the [Kotlin](http://confluence.jetbrains.net/display/Kotlin/Welcome) language and explore its features (and limitations)
+
 # Syntax
 
 Expect.kt allows you to use two different approaches to defining an assertion.
@@ -93,31 +95,123 @@ Assert that the state is NOT `false`
 # String Assertions
 
 ## toBeEmpty
+
+Assert that a string is empty ("").
+
+	expect("").toBeEmpty()
+    "".should.beEmpty()
+
 ## toNotBeEmpty
+
+Assert that a string is not empty ("").
+
+	expect("  ").toNotBeEmpty()
+    "  ".should.beNotEmpty()
+
 ## toHaveLength
+
+Assert that a string is of a certain length.
+
+	expect("james").toHaveLength(5)
+    "james".should.haveLength(5)
+
 ## toBeBlank
+
+Assert that a string is blank, in that it is empty or contains only whitespace.
+
+	expect("   ").toBeBlank()
+    "    ".should.beBlank()
+
 ## toNotBeBlank
+
+Assert that a string is not blank, in that it isn't empty or contains more than whitespace.
+
+	expect("james").toNotBeBlank()
+    "james".should.notBeBlank()
+
 ## toBeEquivalentTo
+
+Assert that a string is equal to another string regardless of case.
+
+	expect("JAMES").toBeEquivalentTo("james")
+    "JAMES".should.beEquivalentTo("james")
+
 ## toEndWith
+
+Assert that a string ends with another string
+
+	expect("James").toEndWith("es")
+    "James".should.endWith("es")
+
 ## toEndWithEquivalent
+
+Assert that a string ends with another string regardless of case.
+
+	expect("JAMES").toEndWithEquivalent("es")
+    "JAMES".should.endWithEquivalent("es")
+
 ## toContain
+
+Assert that a string contains another string.
+
+	expect("JAMES").toContain("AM")
+    "JAMES".should.contain("AM)
+
 ## toContainEquivalent
+
+Assert that a string contains another string regardless of case.
+
 ## toNotContain
+
+Assert that a string doesn't contain another string.
+
 ## toNotContainEquivalent
+
+Assert that a string doesn't contain another string regardless of case.
+
 ## toStartWith
+
+Assert that a string starts with another string.
+
 ## toStartWithEquivalent
+
+Assert that a string starts with another string regardless of case.
+
 ## toMatch
+
+Assert that a string matches the given regex.
 
 # Int Assertions
 
 ## toBeGreaterOrEqualTo
+
+Assert that a number is greater than or equal to another
+
 ## toBeGreaterThan
+
+Assert that a number is greater than to another
+
 ## toBeLessOrEqualTo
+
+Assert that a number is less than or equal to another
+
 ## toBeLessThan
+
+Assert that a number is less than to another
+
 ## toBePositive
+
+Assert that a number is positive
+
 ## toBeInRange
+
+Assert that a number is within the lower and upper bounds passed in
+
 ## toBeApproximately
 
+Assert that a number is approximately another, the level of error is defined by the tolerance value (+/- tolerance)
+
+<!--
 > TODO: This stuff is still in development and very subject to change.
 
 # Date and Time Assertions
@@ -173,3 +267,5 @@ Assert that the state is NOT `false`
 ## toThrow&lt;TException>
 ## toNotThrow
 ## toNotThrow&lt;TException>
+
+-->
