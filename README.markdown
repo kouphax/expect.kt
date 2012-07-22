@@ -96,37 +96,64 @@ Assert that the state is NOT `false`
 
 Assert that a string is empty ("").
 
+	expect("").toBeEmpty()
+    "".should.beEmpty()
+
 ## toNotBeEmpty
 
 Assert that a string is not empty ("").
+
+	expect("  ").toNotBeEmpty()
+    "  ".should.beNotEmpty()
 
 ## toHaveLength
 
 Assert that a string is of a certain length.
 
+	expect("james").toHaveLength(5)
+    "james".should.haveLength(5)
+
 ## toBeBlank
 
 Assert that a string is blank, in that it is empty or contains only whitespace.
+
+	expect("   ").toBeBlank()
+    "    ".should.beBlank()
 
 ## toNotBeBlank
 
 Assert that a string is not blank, in that it isn't empty or contains more than whitespace.
 
+	expect("james").toNotBeBlank()
+    "james".should.notBeBlank()
+
 ## toBeEquivalentTo
 
 Assert that a string is equal to another string regardless of case.
+
+	expect("JAMES").toBeEquivalentTo("james")
+    "JAMES".should.beEquivalentTo("james")
 
 ## toEndWith
 
 Assert that a string ends with another string
 
+	expect("James").toEndWith("es")
+    "James".should.endWith("es")
+
 ## toEndWithEquivalent
 
 Assert that a string ends with another string regardless of case.
 
+	expect("JAMES").toEndWithEquivalent("es")
+    "JAMES".should.endWithEquivalent("es")
+
 ## toContain
 
 Assert that a string contains another string.
+
+	expect("JAMES").toContain("AM")
+    "JAMES".should.contain("AM)
 
 ## toContainEquivalent
 
