@@ -93,31 +93,96 @@ Assert that the state is NOT `false`
 # String Assertions
 
 ## toBeEmpty
+
+Assert that a string is empty ("").
+
 ## toNotBeEmpty
+
+Assert that a string is not empty ("").
+
 ## toHaveLength
+
+Assert that a string is of a certain length.
+
 ## toBeBlank
+
+Assert that a string is blank, in that it is empty or contains only whitespace.
+
 ## toNotBeBlank
+
+Assert that a string is not blank, in that it isn't empty or contains more than whitespace.
+
 ## toBeEquivalentTo
+
+Assert that a string is equal to another string regardless of case.
+
 ## toEndWith
+
+Assert that a string ends with another string
+
 ## toEndWithEquivalent
+
+Assert that a string ends with another string regardless of case.
+
 ## toContain
+
+Assert that a string contains another string.
+
 ## toContainEquivalent
+
+Assert that a string contains another string regardless of case.
+
 ## toNotContain
+
+Assert that a string doesn't contain another string.
+
 ## toNotContainEquivalent
+
+Assert that a string doesn't contain another string regardless of case.
+
 ## toStartWith
+
+Assert that a string starts with another string.
+
 ## toStartWithEquivalent
+
+Assert that a string starts with another string regardless of case.
+
 ## toMatch
+
+Assert that a string matches the given regex.
 
 # Int Assertions
 
 ## toBeGreaterOrEqualTo
+
+Assert that a number is greater than or equal to another
+
 ## toBeGreaterThan
+
+Assert that a number is greater than to another
+
 ## toBeLessOrEqualTo
+
+Assert that a number is less than or equal to another
+
 ## toBeLessThan
+
+Assert that a number is less than to another
+
 ## toBePositive
+
+Assert that a number is positive
+
 ## toBeInRange
+
+Assert that a number is within the lower and upper bounds passed in
+
 ## toBeApproximately
 
+Assert that a number is approximately another, the level of error is defined by the tolerance value (+/- tolerance)
+
+<!--
 > TODO: This stuff is still in development and very subject to change.
 
 # Date and Time Assertions
@@ -173,3 +238,5 @@ Assert that the state is NOT `false`
 ## toThrow&lt;TException>
 ## toNotThrow
 ## toNotThrow&lt;TException>
+
+-->
