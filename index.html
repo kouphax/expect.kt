@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>expect.kt by kouphax</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>expect.kt</h1>
+        <p>Expectations/Assertions library for Kotlin with some fluent syntax</p>
+
+        <p class="view"><a href="https://github.com/kouphax/expect.kt">View the Project on GitHub <small>kouphax/expect.kt</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kouphax/expect.kt/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kouphax/expect.kt/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kouphax/expect.kt">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Introduction</h1>
+
+<p>Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set of assertions than you get from the <code>kotlin.test</code>.  Each type has a set of extension functions that allow you to check certain specifics that relate to that type.</p>
+
+<p>Rather than fulfilling a specific need this project was started as a means to understand the <a href="http://confluence.jetbrains.net/display/Kotlin/Welcome">Kotlin</a> language and explore its features (and limitations).  As it stands most of the assertions are not making good use of the "Kotlin way" and are shamelessly ripped off <a href="http://fluentassertions.codeplex.com/">FluentAssertions for .NET</a>.  The tweaking and improving come next plus there are actually some really nice bits of testing code with Kotlin.</p>
+
+<h1>Syntax</h1>
+
+<p>Expect.kt allows you to use two different approaches to defining an assertion.</p>
+
+<h2>Expect Syntax</h2>
+
+<p>Expect syntax offers typical expect(something).toBeInACertainState style of grammar.  The following test highlight this appraoch.</p>
+
+<pre><code>expect("james").toBe("james")
+</code></pre>
+
+<h2>Fluent Syntax</h2>
+
+<p>It is also possible to use a more fluent syntax to make the same assertion</p>
+
+<pre><code>"james".should.be("james")
+</code></pre>
+
+<h1>Chaining</h1>
+
+<p>Expect.kt allows you to chain assertions to keep things really neat and tidy.</p>
+
+<pre><code>expect("james").toStartWith("j").and.toEndWith("s")
+</code></pre>
+
+<p>Or, in fluent syntax</p>
+
+<pre><code>"james".should.startWith("j").and.endWith("s")
+</code></pre>
+
+<h1>Standard Assertions</h1>
+
+<p>There are a few assertions that can be used against any type,</p>
+
+<h2>toBe(...)/be(...)</h2>
+
+<p>Assert that the state is the value passed in,</p>
+
+<pre><code>expect("james").toBe("james")
+"james".should.be("james")
+</code></pre>
+
+<h2>toNotBe(...)/notBe(...)</h2>
+
+<p>Assert that the state is NOT the value passed in,</p>
+
+<pre><code>expect("james").toNotBe("henry")
+"james".should.notBe("henry")
+</code></pre>
+
+<h2>toBeNull()/beNull()</h2>
+
+<p>Assert that the state is null,</p>
+
+<pre><code>expect(null).toBeNull()
+null.should.beNull()
+</code></pre>
+
+<h2>toNotBeNull()/notBeNull()</h2>
+
+<p>Assert that the state is NOT null</p>
+
+<pre><code>expect("james").toNotBeNull()
+"james".should.notBeNull()
+</code></pre>
+
+<h1>Logic Assertions</h1>
+
+<h2>toBeTrue()/beTrue()</h2>
+
+<p>Assert that the value is <code>true</code></p>
+
+<pre><code>expect(true).toBeTrue()
+true.should.beTrue()
+</code></pre>
+
+<h2>toNotBeTrue()/notBeTrue()</h2>
+
+<p>Assert that the state is NOT <code>true</code></p>
+
+<pre><code>expect(false).toNotBeTrue()
+false.should.notBeTrue()
+</code></pre>
+
+<h2>toBeFalse()/beFalse()</h2>
+
+<p>Assert that the value is <code>false</code></p>
+
+<pre><code>expect(false).toBeFalse()
+false.should.beFalse()
+</code></pre>
+
+<h2>toNotBeFalse()/notBeFalse()</h2>
+
+<p>Assert that the state is NOT <code>false</code></p>
+
+<pre><code>expect(true).toNotBeFalse()
+true.should.notBeFalse()
+</code></pre>
+
+<h1>String Assertions</h1>
+
+<h2>toBeEmpty</h2>
+
+<p>Assert that a string is empty ("").</p>
+
+<pre><code>expect("").toBeEmpty()
+"".should.beEmpty()
+</code></pre>
+
+<h2>toNotBeEmpty</h2>
+
+<p>Assert that a string is not empty ("").</p>
+
+<pre><code>expect("  ").toNotBeEmpty()
+"  ".should.beNotEmpty()
+</code></pre>
+
+<h2>toHaveLength</h2>
+
+<p>Assert that a string is of a certain length.</p>
+
+<pre><code>expect("james").toHaveLength(5)
+"james".should.haveLength(5)
+</code></pre>
+
+<h2>toBeBlank</h2>
+
+<p>Assert that a string is blank, in that it is empty or contains only whitespace.</p>
+
+<pre><code>expect("   ").toBeBlank()
+"    ".should.beBlank()
+</code></pre>
+
+<h2>toNotBeBlank</h2>
+
+<p>Assert that a string is not blank, in that it isn't empty or contains more than whitespace.</p>
+
+<pre><code>expect("james").toNotBeBlank()
+"james".should.notBeBlank()
+</code></pre>
+
+<h2>toBeEquivalentTo</h2>
+
+<p>Assert that a string is equal to another string regardless of case.</p>
+
+<pre><code>expect("JAMES").toBeEquivalentTo("james")
+"JAMES".should.beEquivalentTo("james")
+</code></pre>
+
+<h2>toEndWith</h2>
+
+<p>Assert that a string ends with another string</p>
+
+<pre><code>expect("James").toEndWith("es")
+"James".should.endWith("es")
+</code></pre>
+
+<h2>toEndWithEquivalent</h2>
+
+<p>Assert that a string ends with another string regardless of case.</p>
+
+<pre><code>expect("JAMES").toEndWithEquivalent("es")
+"JAMES".should.endWithEquivalent("es")
+</code></pre>
+
+<h2>toContain</h2>
+
+<p>Assert that a string contains another string.</p>
+
+<pre><code>expect("JAMES").toContain("AM")
+"JAMES".should.contain("AM)
+</code></pre>
+
+<h2>toContainEquivalent</h2>
+
+<p>Assert that a string contains another string regardless of case.</p>
+
+<h2>toNotContain</h2>
+
+<p>Assert that a string doesn't contain another string.</p>
+
+<h2>toNotContainEquivalent</h2>
+
+<p>Assert that a string doesn't contain another string regardless of case.</p>
+
+<h2>toStartWith</h2>
+
+<p>Assert that a string starts with another string.</p>
+
+<h2>toStartWithEquivalent</h2>
+
+<p>Assert that a string starts with another string regardless of case.</p>
+
+<h2>toMatch</h2>
+
+<p>Assert that a string matches the given regex.</p>
+
+<h1>Numeric Assertions (currently Int, Long, Double)</h1>
+
+<h2>toBeGreaterOrEqualTo</h2>
+
+<p>Assert that a number is greater than or equal to another</p>
+
+<h2>toBeGreaterThan</h2>
+
+<p>Assert that a number is greater than to another</p>
+
+<h2>toBeLessOrEqualTo</h2>
+
+<p>Assert that a number is less than or equal to another</p>
+
+<h2>toBeLessThan</h2>
+
+<p>Assert that a number is less than to another</p>
+
+<h2>toBeInRange</h2>
+
+<p>Assert that a number is within the lower and upper bounds passed in</p>
+
+<h2>toBeApproximately</h2>
+
+<p>Assert that a number is approximately another, the level of error is defined by the tolerance value (+/- tolerance)</p>
+
+<h1>Date and Time Assertions</h1>
+
+<h2>toBeAfter</h2>
+
+<p>Assert that the given date is after the passed in date.</p>
+
+<h2>toBeBefore</h2>
+
+<p>Assert that the given date is before the passed in date.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kouphax">kouphax</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
