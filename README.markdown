@@ -2,6 +2,8 @@
 
 Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set of assertions than you get from the `kotlin.test`.  Each type has a set of extension functions that allow you to check certain specifics that relate to that type.
 
+Rather than fulfilling a specific need this project was started as a means to understand the [Kotlin](http://confluence.jetbrains.net/display/Kotlin/Welcome) language and explore its features (and limitations)
+
 # Syntax
 
 Expect.kt allows you to use two different approaches to defining an assertion.
