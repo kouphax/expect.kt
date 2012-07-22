@@ -22,11 +22,6 @@ fun Expectation<Int>.toBeLessThan(val value: Int) : ExpectationChain<Int> {
     return ExpectationChain(this)
 }
 
-fun Expectation<Int>.toBePositive() : ExpectationChain<Int> {
-    assertTrue(target > 0)
-    return ExpectationChain(this)
-}
-
 fun Expectation<Int>.toBeInRange(val lower: Int, val upper: Int) : ExpectationChain<Int> {
     assertTrue(target >= lower && target <= upper)
     return ExpectationChain(this)
@@ -37,6 +32,7 @@ fun Expectation<Int>.toBeApproximately(val value: Int, val tolerance: Int) : Exp
 }
 
 public val Int.should : Should<Int> get() = Should(this)
+
 
 fun Should<Int>.beGreaterOrEqualTo(val value: Int) : ShouldChain<Int> {
     expector.toBeGreaterOrEqualTo(value)
@@ -55,11 +51,6 @@ fun Should<Int>.beLessOrEqualTo(val value: Int) : ShouldChain<Int> {
 
 fun Should<Int>.beLessThan(val value: Int) : ShouldChain<Int> {
     expector.toBeLessThan(value)
-    return ShouldChain(this)
-}
-
-fun Should<Int>.bePositive() : ShouldChain<Int> {
-    expector.toBePositive()
     return ShouldChain(this)
 }
 

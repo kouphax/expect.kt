@@ -7,17 +7,46 @@ import kotlin.expectations.*
 
 class NumericExpectationTests {
 
-    test fun toBeGreaterOrEqualTo() {
-        expect(2).toBeGreaterOrEqualTo(1)
-        expect(2).toBeGreaterOrEqualTo(2)
+    test fun toBeGreaterOrEqualTo_Int() {
+        expect(2.toInt()).toBeGreaterOrEqualTo(1)
+        expect(2.toInt()).toBeGreaterOrEqualTo(2)
         failsWith<AssertionError>({
-            expect(2).toBeGreaterOrEqualTo(3)
+            expect(2.toInt()).toBeGreaterOrEqualTo(3)
         })
 
-        2.should.beGreaterOrEqualTo(1)
-        2.should.beGreaterOrEqualTo(2)
+        2.toInt().should.beGreaterOrEqualTo(1)
+        2.toInt().should.beGreaterOrEqualTo(2)
         failsWith<AssertionError>({
-            2.should.beGreaterOrEqualTo(3)
+            2.toInt().should.beGreaterOrEqualTo(3)
+        })
+    }
+
+    test fun toBeGreaterOrEqualTo_Long() {
+        expect(2.toLong()).toBeGreaterOrEqualTo(1)
+        expect(2.toLong()).toBeGreaterOrEqualTo(2)
+        failsWith<AssertionError>({
+            expect(2.toLong()).toBeGreaterOrEqualTo(3)
+        })
+
+        2.toLong().should.beGreaterOrEqualTo(1)
+        2.toLong().should.beGreaterOrEqualTo(2)
+        failsWith<AssertionError>({
+            2.toLong().should.beGreaterOrEqualTo(3)
+        })
+    }
+
+
+    test fun toBeGreaterOrEqualTo_Double() {
+        expect(2.toDouble()).toBeGreaterOrEqualTo(1.0)
+        expect(2.toDouble()).toBeGreaterOrEqualTo(2.0)
+        failsWith<AssertionError>({
+            expect(2.toDouble()).toBeGreaterOrEqualTo(3.0)
+        })
+
+        2.toDouble().should.beGreaterOrEqualTo(1.0)
+        2.toDouble().should.beGreaterOrEqualTo(2.0)
+        failsWith<AssertionError>({
+            2.toDouble().should.beGreaterOrEqualTo(3.0)
         })
     }
 
@@ -58,18 +87,6 @@ class NumericExpectationTests {
         1.should.beLessThan(2)
         failsWith<AssertionError>({
             2.should.beLessThan(2)
-        })
-    }
-
-    test fun toBePositive() {
-        expect(1).toBePositive()
-        failsWith<AssertionError>({
-            expect(-1).toBePositive()
-        })
-
-        1.should.bePositive()
-        failsWith<AssertionError>({
-            (-1).should.bePositive()
         })
     }
 

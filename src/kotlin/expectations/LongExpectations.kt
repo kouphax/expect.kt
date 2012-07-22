@@ -22,11 +22,6 @@ fun Expectation<Long>.toBeLessThan(val value: Long) : ExpectationChain<Long> {
     return ExpectationChain(this)
 }
 
-fun Expectation<Long>.toBePositive() : ExpectationChain<Long> {
-    assertTrue(target > 0)
-    return ExpectationChain(this)
-}
-
 fun Expectation<Long>.toBeInRange(val lower: Long, val upper: Long) : ExpectationChain<Long> {
     assertTrue(target >= lower && target <= upper)
     return ExpectationChain(this)
@@ -55,11 +50,6 @@ fun Should<Long>.beLessOrEqualTo(val value: Long) : ShouldChain<Long> {
 
 fun Should<Long>.beLessThan(val value: Long) : ShouldChain<Long> {
     expector.toBeLessThan(value)
-    return ShouldChain(this)
-}
-
-fun Should<Long>.bePositive() : ShouldChain<Long> {
-    expector.toBePositive()
     return ShouldChain(this)
 }
 
