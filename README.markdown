@@ -2,7 +2,7 @@
 
 Expect.kt is a set of assertions that allow you to assert the outcome of testing state using a more fluent and specific set of assertions than you get from the `kotlin.test`.  Each type has a set of extension functions that allow you to check certain specifics that relate to that type.
 
-Rather than fulfilling a specific need this project was started as a means to understand the [Kotlin](http://confluence.jetbrains.net/display/Kotlin/Welcome) language and explore its features (and limitations)
+Rather than fulfilling a specific need this project was started as a means to understand the [Kotlin](http://confluence.jetbrains.net/display/Kotlin/Welcome) language and explore its features (and limitations).  As it stands most of the assertions are not making good use of the "Kotlin way" and are shamelessly ripped off [FluentAssertions for .NET](http://fluentassertions.codeplex.com/).  The tweaking and improving come next.
 
 # Syntax
 
@@ -207,13 +207,22 @@ Assert that a number is within the lower and upper bounds passed in
 
 Assert that a number is approximately another, the level of error is defined by the tolerance value (+/- tolerance)
 
-<!--
-> TODO: This stuff is still in development and very subject to change.
-
 # Date and Time Assertions
 
 ## toBeAfter
+
+Assert that the given date is after the passed in date.
+
 ## toBeBefore
+
+Assert that the given date is before the passed in date.
+
+<!--
+> TODO: This stuff is still in development and very subject to change.
+
+
+
+
 ## toBeOnOrAfter
 ## toHaveDay
 ## toHaveMonth
