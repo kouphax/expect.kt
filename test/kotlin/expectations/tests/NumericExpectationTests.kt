@@ -5,7 +5,7 @@ import org.junit.Assert.*
 import kotlin.test.*
 import kotlin.expectations.*
 
-class NumericExpectations {
+class NumericExpectationTests {
 
     test fun toBeGreaterOrEqualTo() {
         expect(2).toBeGreaterOrEqualTo(1)
