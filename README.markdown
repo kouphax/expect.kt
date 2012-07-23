@@ -217,13 +217,13 @@ Assert that the given date is after the passed in date.
 
 Assert that the given date is before the passed in date.
 
+## toBeOnOrAfter
+
+Asserts that the passed in date is on or after the asserted date without considering the time part of the date.  _This is a dubious decisions and needs properly considered_
+
 <!--
 > TODO: This stuff is still in development and very subject to change.
 
-
-
-
-## toBeOnOrAfter
 ## toHaveDay
 ## toHaveMonth
 ## toHaveYear

@@ -5,6 +5,7 @@ import org.junit.Assert.*
 import kotlin.test.*
 import kotlin.expectations.*
 import java.util.Date
+import org.joda.time.DateTime
 
 class DateExpectationTests {
     test fun toBeAfter () {
@@ -34,6 +35,20 @@ class DateExpectationTests {
         earlierDate.should.beBefore(laterDate)
         failsWith<AssertionError>({
             laterDate.should.beBefore(earlierDate)
+        })
+    }
+
+    test fun toBeOnOrAfter() {
+
+        val currentDay = DateTime().toDate() as Date
+        val currentDayDifferentTime = DateTime().minusHours(1)?.toDate() as Date
+        val previousDay = DateTime().minusDays(1)?.toDate() as Date
+        val nextDay = DateTime().plusDays(1)?.toDate() as Date
+
+        expect(currentDay).toBeOnOrAfter(previousDay)
+        expect(currentDay).toBeOnOrAfter(currentDayDifferentTime)
+        failsWith<AssertionError>({
+            expect(currentDay).toBeOnOrAfter(nextDay)
         })
     }
 }
